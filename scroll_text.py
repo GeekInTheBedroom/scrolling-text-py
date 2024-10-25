@@ -6,19 +6,20 @@ def clear_screen():
 
 def scroll_text(text: str, delay: float):
     for i in range(len(text)):
-        print(text[i:])
-        time.sleep(delay)
-        clear_screen()
-
-    for i in range(len(text)):
         spaces = ' ' * (len(text) - i)
         print(f"{spaces}{text[:i]}")
         time.sleep(delay)
         clear_screen()
 
+    for i in range(len(text)):
+        print(text[i:])
+        time.sleep(delay)
+        clear_screen()
+
+# testing
 clear_screen()
 while True:
-    scroll_text("ABCDEF", 0.5)
+    scroll_text("PYTHON", 0.5)
 
 """
 If you can optimize this, please do it.
